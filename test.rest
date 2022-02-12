@@ -5,3 +5,10 @@ Content-Type: application/json
 {
     "query": "guess my name"
 }
+###
+post https://ees-openai-completer.herokuapp.com/complete
+Content-Type: application/json
+
+{
+    "query": "Evaluate the following expression: 4*3+5 / 12"
+}

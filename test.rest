@@ -1,0 +1,7 @@
+###
+post http://localhost:3000/complete
+Content-Type: application/json
+
+{
+    "query": "guess my name"
+}

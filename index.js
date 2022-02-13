@@ -22,8 +22,8 @@ app.post('/complete', async (req, res) => {
     const { query } = req.body;
     const response = await openai.createCompletion("text-davinci-001", {
         prompt: query,
-        temperature: 0.7,
-        max_tokens: 64,
+        temperature: 1,
+        max_tokens: 966,
         top_p: 1,
         frequency_penalty: 0,
         presence_penalty: 0,

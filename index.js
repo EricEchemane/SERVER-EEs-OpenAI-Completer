@@ -4,7 +4,6 @@ const app = express();
 const cors = require('cors');
 
 app.use(express.json());
-app.use(cors({ origin: "*" }));
 
 const PORT = process.env.PORT || 3000;
 
@@ -15,9 +14,9 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-app.get('/', function (req, res) { res.send('Eric Echemane OpenAI Completer'); });
+app.get('/', cors({ origin: "*" }), function (req, res) { res.send('Eric Echemane OpenAI Completer'); });
 
-app.post('/complete', cors({ origin: 'https://enginex.vercel.app/' }), async (req, res) => {
+app.post('/complete', cors({ origin: "https://enginex.vercel.app" }), async (req, res) => {
     const { query } = req.body;
     const response = await openai.createCompletion("text-davinci-001", {
         prompt: query,

@@ -17,7 +17,7 @@ const openai = new OpenAIApi(configuration);
 
 app.get('/', function (req, res) { res.send('Eric Echemane OpenAI Completer'); });
 
-app.post('/complete', async (req, res) => {
+app.post('/complete', cors({ origin: 'https://enginex.vercel.app/' }), async (req, res) => {
     req.header;
     const { query } = req.body;
     const response = await openai.createCompletion("text-davinci-001", {
